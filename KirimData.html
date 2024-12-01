@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Undangan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://acaranya.id/storage/2024/08/e07c9577b9efe376f3016a3d87fe4bf0.jpg') no-repeat center center fixed; /* Ganti dengan URL gambar latar belakang */
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.39);
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 10px 15px rgb(108, 243, 90);
+        }
+
+        h1 {
+            text-align: center;
+            color: #56ab2f;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 5px rgba(98, 230, 86, 0.521);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            box-shadow: 0 10px 15px rgba(87, 248, 149, 0.568);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+            color: #333;
+        }
+
+        input,
+        textarea,
+        button {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 1.1rem;
+            margin-top: 5px;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: #56ab2f;
+            outline: none;
+        }
+
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+
+        input[type="file"] {
+            padding: 8px;
+        }
+
+        button {
+            background: #56ab2f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+            box-shadow: 0 10px 15px rgba(9, 218, 89, 0.514);
+        }
+
+        button:hover {
+            background: #4b8f29;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .buttons button {
+            width: 48%;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #372af591;
+            box-shadow: 0 10px 15px rgba(9, 218, 89, 0.514);
+        }
+
+        footer a {
+            color: #372af591;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 10px 15px rgba(9, 218, 89, 0.514);
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Box Shadow for form inputs */
+        .form-group input, .form-group textarea, .form-group button {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile Responsiveness */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            input,
+            textarea,
+            button {
+                font-size: 1rem;
+            }
+
+            .buttons button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create Undangan</h1>
+        <form id="undanganForm">
+            <div class="form-group">
+                <label for="namaPengantin">Nama Kedua Pengantin</label>
+                <input type="text" id="namaPengantin" placeholder="Contoh: Edy & Cindy" required>
+            </div>
+            <div class="form-group">
+                <label for="ortuLaki">Nama Kedua Orang Tua Pihak Laki-Laki</label>
+                <input type="text" id="ortuLaki" placeholder="Nama orang tua pihak laki-laki" required>
+            </div>
+            <div class="form-group">
+                <label for="ortuPerempuan">Nama Kedua Orang Tua Pihak Perempuan</label>
+                <input type="text" id="ortuPerempuan" placeholder="Nama orang tua pihak perempuan" required>
+            </div>
+            <div class="form-group">
+                <label for="akad">Tanggal, Waktu & Lokasi Akad Pernikahan</label>
+                <input type="text" id="akad" placeholder="Contoh: 13 Mei 2025, 10:00, Gedung ABC" required>
+            </div>
+            <div class="form-group">
+                <label for="resepsi">Tanggal, Waktu & Lokasi Resepsi Pernikahan</label>
+                <input type="text" id="resepsi" placeholder="Contoh: 14 Mei 2025, 11:00, Hotel XYZ" required>
+            </div>
+            <div class="form-group">
+                <label for="cerita">Cerita Pertemuan</label>
+                <textarea id="cerita" placeholder="Tulis cerita singkat tentang pertemuan kalian..." required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="rekening">Nomor Rekening</label>
+                <input type="text" id="rekening" placeholder="Masukkan nomor rekening untuk hadiah pernikahan" required>
+            </div>
+            <div class="form-group">
+                <label for="fotoPengantin">Kirim Foto Kedua Pengantin</label>
+                <input type="file" id="fotoPengantin" accept="image/*" required>
+            </div>
+            <div class="form-group">
+                <label for="fotoGallery">Kirim Foto untuk Galeri</label>
+                <input type="file" id="fotoGallery" accept="image/*" multiple required>
+            </div>
+            <div class="form-group">
+                <label for="videoCerita">Kirim Video Cerita Kalian</label>
+                <input type="file" id="videoCerita" accept="video/*" required>
+            </div>
+            <div class="buttons">
+                <button type="button" onclick="sendToWhatsApp()">Kirim ke WhatsApp</button>
+                <button type="button" onclick="sendToEmail()">Kirim ke Gmail</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        &copy; 2024 <a href="#">UndanganKita.com</a>
+    </footer>
+
+    <script>
+        function collectData() {
+            return {
+                namaPengantin: document.getElementById("namaPengantin").value,
+                ortuLaki: document.getElementById("ortuLaki").value,
+                ortuPerempuan: document.getElementById("ortuPerempuan").value,
+                akad: document.getElementById("akad").value,
+                resepsi: document.getElementById("resepsi").value,
+                cerita: document.getElementById("cerita").value,
+                rekening: document.getElementById("rekening").value,
+                whatsapp: "083111823312",
+                email: "redg16253@gmail.com"
+            };
+        }
+
+        function sendToWhatsApp() {
+            const data = collectData();
+            const message = `
+🔔 *Undangan Pernikahan* 🔔
+👰 Nama Pengantin: ${data.namaPengantin}
+👨‍👩‍👦 Orang Tua Laki: ${data.ortuLaki}
+👩‍👩‍👦 Orang Tua Perempuan: ${data.ortuPerempuan}
+📅 Akad: ${data.akad}
+📅 Resepsi: ${data.resepsi}
+❤️ Cerita: ${data.cerita}
+💳 Rekening: ${data.rekening}
+📞 Nomor WhatsApp: ${data.whatsapp}
+📧 Email: ${data.email}
+            `;
+            const whatsappURL = `https://wa.me/${data.whatsapp}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, "_blank");
+        }
+
+        function sendToEmail() {
+            const data = collectData();
+            const subject = "Undangan Pernikahan";
+            const body = `
+Undangan Pernikahan
+
+Nama Pengantin: ${data.namaPengantin}
+Orang Tua Laki: ${data.ortuLaki}
+Orang Tua Perempuan: ${data.ortuPerempuan}
+Akad: ${data.akad}
+Resepsi: ${data.resepsi}
+Cerita: ${data.cerita}
+Rekening: ${data.rekening}
+Nomor WhatsApp: ${data.whatsapp}
+Email: ${data.email}
+            `;
+            const mailtoURL = `mailto:${data.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(mailtoURL, "_blank");
+        }
+    </script>
+</body>
+
+</html>
