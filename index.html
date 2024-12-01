@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Undangan Acara The Wedding of EDY &amp; CINDY</title>
+    <title>Undangan Acara The Wedding</title>
     <!-- Facebook and Twitter integration -->
     <meta property="og:type" content="article">
     <meta property="og:title" content="The Wedding of EDY&amp; CINDY">
@@ -4210,7 +4210,7 @@
             <div id="fun-div-id3" class="awal-dalam fun-div-497" style="padding-top: 45px">
                 <p id="awal-svd-p-id1"
                     style="color: #2276b1 !important; font-weight: 400; font-size: 18px; text-shadow: 1px 1px 2px #005189;"
-                    class="fun-p-122">Save The Date</p>
+                    class="fun-p-122">Wedding</p>
                 <h1 id="awal-fun-h1-id1" style="margin-top: -5px; font-size: 65px; color: #005189; margin-left: -125px; font-weight: 400; letter-spacing: 1px; text-stroke: 1px #005189;
                      -webkit-text-stroke: 1px #005189;" class="fun-h1-2">EDY</h1>
                 <h1 id="awal-fun-h1-id11" style="font-size: 65px; margin-top: -25px; margin-left: 120px; color: #005189; font-weight: 400; letter-spacing: 1px; text-stroke: 1px #005189;
@@ -7242,11 +7242,17 @@
         if (tanggalElement) tanggalElement.textContent = params["awal-fun-h2-id1"];
     }
 
-    if (params["awal-fun-p-id3"]) {
-        const keteranganElement = document.getElementById("awal-fun-p-id3");
-        if (keteranganElement) keteranganElement.textContent = params["awal-fun-p-id3"];
+    if (params["upembuka-fun-div-id22"]) {
+        const keteranganElement = document.getElementById("upembuka-fun-div-id22");
+        if (keteranganElement) keteranganElement.textContent = params["upembuka-fun-div-id22"];
     }
-</script>
+
+    // Perbarui elemen gambar
+    if (params["awal-fun-img1"]) {
+        const imgElement = document.getElementById("awal-fun-img1");
+        if (imgElement) imgElement.src = params["awal-fun-img1"];
+    }
+    </script>
 
 
         <iframe allow="join-ad-interest-group" data-tagging-id="G-71YZD0D3M1" data-load-time="1732933096639"
