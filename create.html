@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Undangan</title>
+    <title>Undangan</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -46,12 +46,12 @@
 </head>
 
 <body>
-    <h1>Edit Undangan</h1>
+    <h1>Undangan</h1>
 
     <div class="form-container">
         <form id="editForm">
             <label for="awal-fun-p-id1">nama tujuan</label>
-            <textarea id="awal-fun-p-id1" placeholder="Edit Nama Tujuan"></textarea>
+            <textarea id="awal-fun-p-id1" placeholder="Kepada Bpk Edy"></textarea>
 
             <label for="awal-fun-h1-id1">Edit Nama Mempelai Laki</label>
             <input type="text" id="awal-fun-h1-id1" placeholder="Edit Nama Mempelai Laki">
@@ -59,18 +59,12 @@
             <label for="awal-fun-h1-id11">Edit Nama Mempelai Perempuan</label>
             <input type="text" id="awal-fun-h1-id11" placeholder="Edit Nama Mempelai Perempuan">
 
-            <!-- Tambahkan input baru -->
-            <label for="awal-fun-p-id2">Alamat Acara</label>
-            <textarea id="awal-fun-p-id2" placeholder="Alamat Acara"></textarea>
-
             <label for="bx1-fun-div-id17">Tanggal Acara</label>
             <input type="date" id="bx1-fun-div-id17">
 
             <label for="upembuka-fun-div-id22">Kata Pembukaan</label>
             <textarea id="upembuka-fun-div-id22" placeholder="Buat Kata Pembuka"></textarea>
 
-            <label for="awal-fun-img1">Edit Gambar Sampul</label>
-            <input type="file" id="awal-fun-img1" accept="image/*">
 
             <button type="submit">Buat link</button>
         </form>
@@ -88,17 +82,15 @@
             const awalfunpid1 = encodeURIComponent(document.getElementById('awal-fun-p-id1').value);
             const awalfunh1id1 = encodeURIComponent(document.getElementById('awal-fun-h1-id1').value);
             const awalfunh1id11 = encodeURIComponent(document.getElementById('awal-fun-h1-id11').value);
-            const awalfunpid2 = encodeURIComponent(document.getElementById('awal-fun-p-id2').value);
             const awalfunh2id1 = encodeURIComponent(document.getElementById('bx1-fun-div-id17').value);
             const awalfunpid3 = encodeURIComponent(document.getElementById('upembuka-fun-div-id22').value);
              // Ambil URL untuk gambar
-            const awalfunimg1 = document.getElementById('awal-fun-img1').files[0]?.name || "";
+    
 
             // Buat link dengan parameter
             const link = `https://cindy-edy.github.io/undangan/index.html?` +
                 `awal-fun-p-id1=${awalfunpid1}&awal-fun-h1-id1=${awalfunh1id1}&awal-fun-h1-id11=${awalfunh1id11}` +
-                `&awal-fun-p-id2=${awalfunpid2}&bx1-fun-div-id17=${bx1fundivid17}&upembuka-fun-div-id22=${upembukafundivid22}` +
-                `&awal-fun-img1=${awalfunimg1}`;
+                `&bx1-fun-div-id17=${bx1fundivid17}&upembuka-fun-div-id22=${upembukafundivid22}`;
             // Tampilkan notifikasi
             Swal.fire({
                 icon: 'success',
