@@ -7202,51 +7202,52 @@
         </script>
 
 <script>
-    // Fungsi untuk membaca query parameter dari URL
+    // Fungsi untuk mendapatkan query parameter dari URL
     function getQueryParams() {
         const params = {};
         const queryString = window.location.search.slice(1); // Hilangkan tanda ?
-        queryString.split("&").forEach((pair) => {
+        queryString.split("&").forEach(pair => {
             const [key, value] = pair.split("=");
             params[key] = decodeURIComponent(value || "");
         });
         return params;
     }
 
-    // Ambil query parameter dari URL
+    // Ambil parameter dari URL
     const params = getQueryParams();
 
-    // Perbarui elemen berdasarkan parameter
+    // Perbarui elemen di halaman berdasarkan query parameter
     if (params["awal-fun-p-id1"]) {
-        const tujuanElement = document.querySelector("[data-tujuan]");
+        const tujuanElement = document.getElementById("awal-fun-p-id1");
         if (tujuanElement) tujuanElement.textContent = params["awal-fun-p-id1"];
     }
 
     if (params["awal-fun-h1-id1"]) {
-        const namaLakiElement = document.querySelector("[data-nama-laki]");
+        const namaLakiElement = document.getElementById("awal-fun-h1-id1");
         if (namaLakiElement) namaLakiElement.textContent = params["awal-fun-h1-id1"];
     }
 
     if (params["awal-fun-h1-id11"]) {
-        const namaPerempuanElement = document.querySelector("[data-nama-perempuan]");
+        const namaPerempuanElement = document.getElementById("awal-fun-h1-id11");
         if (namaPerempuanElement) namaPerempuanElement.textContent = params["awal-fun-h1-id11"];
     }
 
     if (params["awal-fun-p-id2"]) {
-        const alamatElement = document.querySelector("[data-alamat]");
+        const alamatElement = document.getElementById("awal-fun-p-id2");
         if (alamatElement) alamatElement.textContent = params["awal-fun-p-id2"];
     }
 
     if (params["awal-fun-h2-id1"]) {
-        const tanggalElement = document.querySelector("[data-tanggal]");
+        const tanggalElement = document.getElementById("awal-fun-h2-id1");
         if (tanggalElement) tanggalElement.textContent = params["awal-fun-h2-id1"];
     }
 
     if (params["awal-fun-p-id3"]) {
-        const keteranganElement = document.querySelector("[data-keterangan]");
+        const keteranganElement = document.getElementById("awal-fun-p-id3");
         if (keteranganElement) keteranganElement.textContent = params["awal-fun-p-id3"];
     }
 </script>
+
 
         <iframe allow="join-ad-interest-group" data-tagging-id="G-71YZD0D3M1" data-load-time="1732933096639"
             height="0" width="0" src="./index_files/rul.html" style="display: none; visibility: hidden;"
