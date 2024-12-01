@@ -7201,42 +7201,53 @@
 
         </script>
 
- <script>
-        // Fungsi untuk mendapatkan query parameter
-        function getQueryParams() {
-            const params = {};
-            const queryString = window.location.search.slice(1);
-            queryString.split('&').forEach(param => {
-                const [key, value] = param.split('=');
-                params[key] = decodeURIComponent(value);
-            });
-            return params;
-        }
+<script>
+    // Fungsi untuk mendapatkan query parameter dari URL
+    function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.slice(1); // Hilangkan "?"
+        queryString.split("&").forEach((pair) => {
+            const [key, value] = pair.split("=");
+            params[key] = decodeURIComponent(value || "");
+        });
+        return params;
+    }
 
-        // Ambil data dari query parameter
-        const params = getQueryParams();
+    // Ambil query parameter
+    const params = getQueryParams();
 
-        // Update elemen dengan data dari parameter
-        if (params['awal-fun-p-id1']) {
-            document.getElementById('namaTujuan').textContent = `Kepada Yth. ${params['awal-fun-p-id1']}`;
-        }
-        if (params['awal-fun-h1-id1']) {
-            document.getElementById('namaLaki').textContent = `Mempelai Laki-laki: ${params['awal-fun-h1-id1']}`;
-        }
-        if (params['awal-fun-h1-id11']) {
-            document.getElementById('namaPerempuan').textContent = `Mempelai Perempuan: ${params['awal-fun-h1-id11']}`;
-        }
-        if (params['awal-fun-p-id2']) {
-            document.getElementById('alamatAcara').textContent = `Alamat: ${params['awal-fun-p-id2']}`;
-        }
-        if (params['awal-fun-h2-id1']) {
-            document.getElementById('tanggalAcara').textContent = `Tanggal: ${params['awal-fun-h2-id1']}`;
-        }
-        if (params['awal-fun-p-id3']) {
-            document.getElementById('keteranganTambahan').textContent = `Keterangan: ${params['awal-fun-p-id3']}`;
-        }
-    </script>
-        
+    // Perbarui elemen berdasarkan parameter
+    if (params["awal-fun-p-id1"]) {
+        const tujuanElement = document.querySelector("#id-untuk-nama-tujuan");
+        if (tujuanElement) tujuanElement.textContent = params["awal-fun-p-id1"];
+    }
+
+    if (params["awal-fun-h1-id1"]) {
+        const namaLakiElement = document.querySelector("#id-untuk-nama-laki");
+        if (namaLakiElement) namaLakiElement.textContent = params["awal-fun-h1-id1"];
+    }
+
+    if (params["awal-fun-h1-id11"]) {
+        const namaPerempuanElement = document.querySelector("#id-untuk-nama-perempuan");
+        if (namaPerempuanElement) namaPerempuanElement.textContent = params["awal-fun-h1-id11"];
+    }
+
+    if (params["awal-fun-p-id2"]) {
+        const alamatElement = document.querySelector("#id-untuk-alamat");
+        if (alamatElement) alamatElement.textContent = params["awal-fun-p-id2"];
+    }
+
+    if (params["awal-fun-h2-id1"]) {
+        const tanggalElement = document.querySelector("#id-untuk-tanggal");
+        if (tanggalElement) tanggalElement.textContent = params["awal-fun-h2-id1"];
+    }
+
+    if (params["awal-fun-p-id3"]) {
+        const keteranganElement = document.querySelector("#id-untuk-keterangan");
+        if (keteranganElement) keteranganElement.textContent = params["awal-fun-p-id3"];
+    }
+</script>
+
         <iframe allow="join-ad-interest-group" data-tagging-id="G-71YZD0D3M1" data-load-time="1732933096639"
             height="0" width="0" src="./index_files/rul.html" style="display: none; visibility: hidden;"
             data-gtm-yt-inspected-15="true"></iframe>
