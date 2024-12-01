@@ -219,7 +219,7 @@
                 resepsi: document.getElementById("resepsi").value,
                 cerita: document.getElementById("cerita").value,
                 rekening: document.getElementById("rekening").value,
-                whatsapp: "083111823312",
+                whatsapp: "+6283111823312",
                 email: "redg16253@gmail.com"
             };
         }
@@ -235,8 +235,7 @@
 📅 Resepsi: ${data.resepsi}
 ❤️ Cerita: ${data.cerita}
 💳 Rekening: ${data.rekening}
-📞 Nomor WhatsApp: ${data.whatsapp}
-📧 Email: ${data.email}
+
             `;
             const whatsappURL = `https://wa.me/${data.whatsapp}?text=${encodeURIComponent(message)}`;
             window.open(whatsappURL, "_blank");
@@ -255,8 +254,7 @@ Akad: ${data.akad}
 Resepsi: ${data.resepsi}
 Cerita: ${data.cerita}
 Rekening: ${data.rekening}
-Nomor WhatsApp: ${data.whatsapp}
-Email: ${data.email}
+
             `;
             const mailtoURL = `mailto:${data.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.open(mailtoURL, "_blank");
