@@ -7202,32 +7202,40 @@
         </script>
 
  <script>
-        document.getElementById('editForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Ambil nilai input
-            const awalfunpid1 = encodeURIComponent(document.getElementById('awal-fun-p-id1').value);
-            const awalfunh1id1 = encodeURIComponent(document.getElementById('awal-fun-h1-id1').value);
-            const awalfunh1id11 = encodeURIComponent(document.getElementById('awal-fun-h1-id11').value);
-            const awalfunpid2 = encodeURIComponent(document.getElementById('awal-fun-p-id2').value);
-            const awalfunh2id1 = encodeURIComponent(document.getElementById('awal-fun-h2-id1').value);
-            const awalfunpid3 = encodeURIComponent(document.getElementById('awal-fun-p-id3').value);
-
-            // Buat link dengan parameter
-            const link = `https://cindy-edy.github.io/Create/undangan/index.html?` +
-                `awal-fun-p-id1=${awalfunpid1}&awal-fun-h1-id1=${awalfunh1id1}&awal-fun-h1-id11=${awalfunh1id11}` +
-                `&awal-fun-p-id2=${awalfunpid2}&awal-fun-h2-id1=${awalfunh2id1}&awal-fun-p-id3=${awalfunpid3}`;
-
-            // Tampilkan notifikasi
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                html: `Salin tautan di bawah ini:<br><a href="${link}" target="_blank">${link}</a>`,
-                confirmButtonColor: '#36d1dc',
+        // Fungsi untuk mendapatkan query parameter
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.slice(1);
+            queryString.split('&').forEach(param => {
+                const [key, value] = param.split('=');
+                params[key] = decodeURIComponent(value);
             });
-        });
+            return params;
+        }
+
+        // Ambil data dari query parameter
+        const params = getQueryParams();
+
+        // Update elemen dengan data dari parameter
+        if (params['awal-fun-p-id1']) {
+            document.getElementById('namaTujuan').textContent = `Kepada Yth. ${params['awal-fun-p-id1']}`;
+        }
+        if (params['awal-fun-h1-id1']) {
+            document.getElementById('namaLaki').textContent = `Mempelai Laki-laki: ${params['awal-fun-h1-id1']}`;
+        }
+        if (params['awal-fun-h1-id11']) {
+            document.getElementById('namaPerempuan').textContent = `Mempelai Perempuan: ${params['awal-fun-h1-id11']}`;
+        }
+        if (params['awal-fun-p-id2']) {
+            document.getElementById('alamatAcara').textContent = `Alamat: ${params['awal-fun-p-id2']}`;
+        }
+        if (params['awal-fun-h2-id1']) {
+            document.getElementById('tanggalAcara').textContent = `Tanggal: ${params['awal-fun-h2-id1']}`;
+        }
+        if (params['awal-fun-p-id3']) {
+            document.getElementById('keteranganTambahan').textContent = `Keterangan: ${params['awal-fun-p-id3']}`;
+        }
     </script>
- 
         
         <iframe allow="join-ad-interest-group" data-tagging-id="G-71YZD0D3M1" data-load-time="1732933096639"
             height="0" width="0" src="./index_files/rul.html" style="display: none; visibility: hidden;"
