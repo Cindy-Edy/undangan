@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        /* Styles shortened for brevity */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            margin: 0;
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        input, textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 8px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background: #36d1dc;
+            border: none;
+            border-radius: 25px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Undangan</h1>
+
+    <div class="form-container">
+        <form id="editForm">
+            <label for="awal-fun-p-id2">nama tujuan</label>
+            <textarea id="awal-fun-p-id2" placeholder="Kepada Bpk Edy"></textarea>
+
+            <label for="awal-fun-h1-id2">Nama Mempelai Laki & Perempuan</label>
+            <input type="text" id="awal-fun-h1-id2" placeholder="Nama Mempelai Laki & Perempuan">
+
+            <button type="submit">Buat link</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Dibuat oleh Edy | Cindy</p>
+    </footer>
+
+    <script>
+        document.getElementById('editForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Ambil nilai input
+            const awalfunpid2 = encodeURIComponent(document.getElementById('awal-fun-p-id2').value);
+            const awalfunh1id2 = encodeURIComponent(document.getElementById('awal-fun-h1-id2').value);
+
+            // Buat link dengan parameter
+            const link = `https://cindy-edy.github.io/undangan2/ID2/index.html?` +
+                `awal-fun-p-id2=${awalfunpid2}&awal-fun-h1-id2=${awalfunh1id2}`;
+            // Tampilkan notifikasi
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                html: `Salin tautan di bawah ini:<br><a href="${link}" target="_blank">${link}</a>`,
+                confirmButtonColor: '#36d1dc',
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
